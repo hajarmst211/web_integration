@@ -2,10 +2,9 @@ class increment_int implements Runnable{
     public int final_int;
 
     public void run(){
-        for(int compteur_int = 0; compteur_int < 10; compteur_int++){
-            System.out.println("Comptuer int is at:"+ compteur_int);
+        for(int compteur_int = 0; compteur_int < 10; compteur_int++)
             final_int ++;
-        }
+        
     }
 
     public int getResult(){
@@ -17,10 +16,9 @@ class increment_char implements Runnable{
     public char final_char;
 
     public void run(){
-        for (char character = 'a'; character <= 'z'; character ++){
-            System.out.println("the charcter now is:"+ character);
+        for (char character = 'a'; character <= 'z'; character ++)
             final_char = character;
-        }
+        
     }
 
     public char getResult(){
@@ -29,7 +27,7 @@ class increment_char implements Runnable{
 }
 
 public class Exercice1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         
         increment_int task1 = new increment_int();
         increment_char task2 = new increment_char();
@@ -44,8 +42,8 @@ public class Exercice1 {
         thread2.join();
 
 
-        System.out.println("The result of thread 1 is: "+ thread1.getResult());
-        System.out.println("The result of thread 2 is: "+ thread2.getResult());
+        System.out.println("The result of thread 1 is: "+ task1.getResult());
+        System.out.println("The result of thread 2 is: "+ task2.getResult());
     }
 
 }
