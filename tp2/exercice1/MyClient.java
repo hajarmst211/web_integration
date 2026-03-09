@@ -9,11 +9,9 @@ public class MyClient {
         DataInputStream client_data = new DataInputStream(client_socket.getInputStream());
 
         String message;
-        while(true){
-            message = client_data.readUTF();
-            if(message.equals("EOF")) break;
-            System.out.println("From server: " + message);
-        }
+        message = client_data.readUTF();
+        System.out.println("From server: " + message);
+        
         client_socket.close(); 
 
         }catch (Exception e){
