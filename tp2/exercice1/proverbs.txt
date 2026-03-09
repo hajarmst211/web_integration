@@ -1,0 +1,4 @@
+proverb1
+proverb2
+proverb3
+
